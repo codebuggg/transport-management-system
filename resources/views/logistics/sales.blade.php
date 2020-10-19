@@ -18,12 +18,12 @@
                       Name
                     </th>
                     <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                      Date
+                      Next Due Date
                     </th>
                     <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                      Sales
+                      Sales Amount
                     </th>
-                    <th class="px-6 py-3 bg-gray-50"></th>
+
                   </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
