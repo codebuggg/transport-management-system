@@ -97,10 +97,10 @@
             <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
                 <label class="hidden block text-sm text-gray-600" for="cus_email">Recurring</label>
                 <select name="status" class="block appearance-none w-full bg-white border border-gray-600 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                    <option>Daily</option>
-                    <option>Weekly</option>
-                    <option>Bi-Weekly</option>
-                    <option>Monthly</option>
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="bi-weekly">Bi-Weekly</option>
+                    <option value="monthly">Monthly</option>
                   </select>
             </div>
             <div class="inline-block mt-2 w-1/2 pr-1">
