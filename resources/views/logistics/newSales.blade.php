@@ -5,79 +5,43 @@
 <div class="mx-auto w-full lg:w-1/2 mt-6 pl-0 lg:pl-2">
 
     <div class="leading-loose">
-        <form class="p-10 bg-white rounded shadow-xl">
-            <p class="text-lg text-gray-800 font-medium pb-4">New Sales Record </p>
-
-        <div class="space-y-1">
-            <label id="listbox-label" class="block text-sm leading-5 font-medium text-gray-700">
-            Select driver
-            </label>
-            <div class="relative">
-            <span class="inline-block w-full rounded-md shadow-sm">
-                <button type="button" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label" class="cursor-default relative w-full rounded-md border border-gray-300 bg-white pl-3 pr-10 py-2 text-left focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition ease-in-out duration-150 sm:text-sm sm:leading-5">
-                <div class="flex items-center space-x-3">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="flex-shrink-0 h-6 w-6 rounded-full">
-                    <span class="block truncate">
-                    Tom Cook
-                    </span>
+        @if (session('status'))
+        <div class="bg-teal-lightest border-t-4 border-teal rounded-b text-teal-darkest px-4 py-3 shadow-md" role="alert">
+            <div class="flex">
+              <div class="py-1"><svg class="fill-current h-6 w-6 text-teal mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"/></svg></div>
+                <div>
+                    <p class="font-bold">{{ session('status') }}</p>
                 </div>
-                <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                    <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="none" stroke="currentColor">
-                    <path d="M7 7l3-3 3 3m0 6l-3 3-3-3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </span>
-                </button>
-            </span>
-
-            <!-- Select popover, show/hide based on select state. -->
-            <div class="absolute mt-1 w-full rounded-md bg-white shadow-lg">
-                <ul tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-item-3" class="max-h-56 rounded-md py-1 text-base leading-6 shadow-xs overflow-auto focus:outline-none sm:text-sm sm:leading-5">
-                <!--
-                    Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation.
-
-                    Highlighted: "text-white bg-indigo-600", Not Highlighted: "text-gray-900"
-                -->
-                <li id="listbox-item-0" role="option" class="text-gray-900 cursor-default select-none relative py-2 pl-3 pr-9">
-                    <div class="flex items-center space-x-3">
-                    <img src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="" class="flex-shrink-0 h-6 w-6 rounded-full">
-                    <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
-                    <span class="font-normal block truncate">
-                        Wade Cooper
-                    </span>
-                    </div>
-
-                    <!--
-                    Checkmark, only display for selected option.
-
-                    Highlighted: "text-white", Not Highlighted: "text-indigo-600"
-                    -->
-                    <span class="absolute inset-y-0 right-0 flex items-center pr-4">
-                    <!-- Heroicon name: check -->
-                    <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                    </svg>
-                    </span>
-                </li>
-
-                <!-- More options... -->
-                </ul>
-            </div>
             </div>
         </div>
+        @endif
+        <form action="{{ route('sales.store') }}" method="POST" class="p-10 bg-white rounded shadow-xl">
+            @csrf
+            <p class="text-lg text-gray-800 font-medium pb-4">New Sales Record </p>
 
+            <div class="inline-block mt-2 -mx-1 pl-1 w-full">
+                <label class="inline-block text-sm text-gray-600" for="cus_email">Driver </label>
+                <select name="driver" class="block appearance-none w-full bg-white border border-gray-600 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    <option selected disabled>Choose a driver</option>
+                    @foreach ($drivers as $driver)
+                        <option value="{{ $driver->id }}">{{ $driver->fname }} {{ $driver->lname }}</option>
+                    @endforeach
+                  </select>
+            </div>
 
             <div class="inline-block mt-2 pr-1 w-1/2">
                 <label class="inline-block text-sm text-gray-600" for="cus_email">Amount </label>
-                <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="cus_email" type="tel" required="" placeholder="Amount" aria-label="Email">
+                <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="amount" type="number" required="" placeholder="Amount" aria-label="Email">
             </div>
             <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
                 <label class="block text-sm text-gray-600" for="cus_email">Next due date</label>
-                <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="cus_email" type="date" required="" placeholder="Next Sale Date" aria-label="Email">
+                <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="next_due_date" type="date" required="" placeholder="Next Sale Date" aria-label="Email">
             </div>
 
             <div class="mt-6">
                 <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit">Add Record</button>
             </div>
+        </form>
     </div>
     <p class="pt-6 text-gray-600">
 

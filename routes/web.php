@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SalesController;
 use App\Http\Controllers\DriverController;
 
 /*
@@ -34,13 +35,9 @@ Route::get('/drivers/newDriver', function () {
     return view('logistics.newDriver');
 })->name('newDriver');
 
-Route::get('/sales', function () {
-    return view('logistics.sales');
-})->name('sales');
-
-Route::get('/sales/newSales', function () {
-    return view('logistics.newSales');
-})->name('newSales');
+Route::get('/sales',[SalesController::class, 'index'])->name('sales');
+Route::get('/sales/create',[SalesController::class, 'create'])->name('newSales');
+Route::post('/sales',[SalesController::class, 'store'])->name('sales.store');
 
 Route::get('/expense', function () {
     return view('logistics.expense');
