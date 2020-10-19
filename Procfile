@@ -1,1 +1,1 @@
-web: vendor/bin/herooku-php-apache2 oublic/
+web: vendor/bin/herooku-php-apache2 public/
