@@ -16,4 +16,9 @@ class Driver extends Model
         'homeAddress', 'motherName', 'fatherName', 'parentAddress', 'emergencyContact',
         'carMake', 'carModel', 'seatingCapacity', 'licensePlate', 'salesAmount', 'status',
     ];
+
+    public function sales()
+    {
+        return $this->hasMany('App\Sales');
+    }
 }

@@ -14,4 +14,12 @@ class Sales extends Model
     protected $fillable = [
         'driver_id', 'amount', 'next_due_date', 
     ];
+
+    /**
+     * Get the user that owns the sales.
+     */
+    public function driver()
+    {
+        return $this->belongsTo('App\Driver');
+    }
 }

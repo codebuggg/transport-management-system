@@ -14,7 +14,6 @@
                 </div>
             </div>
           </div>
-
         @endif
 
         <form action="{{ route('driver.store') }}" class="p-10 bg-white rounded shadow-xl" method="POST">

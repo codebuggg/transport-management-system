@@ -37,6 +37,7 @@ Route::get('/drivers/newDriver', function () {
 
 Route::get('/sales',[SalesController::class, 'index'])->name('sales');
 Route::get('/sales/create',[SalesController::class, 'create'])->name('newSales');
+Route::post('/sales',[SalesController::class, 'store'])->name('sales.store');
 
 Route::get('/expense', function () {
     return view('logistics.expense');

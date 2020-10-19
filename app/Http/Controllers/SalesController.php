@@ -16,7 +16,7 @@ class SalesController extends Controller
     public function index()
     {
         return view('logistics.sales',[
-            'sales' => Sales::get()
+            'sales' => Sales::with('driver')->get()
         ]);
     }
 
