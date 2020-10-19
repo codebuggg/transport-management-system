@@ -55,9 +55,9 @@
                     <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
                       GHS 234.00
                     </td>
-                    <td class="px-6 py-4 whitespace-no-wrap">
-                        <div class="text-sm leading-5 text-gray-900">Date</div>
-                      </td>
+                    <td class="px-6 py-4 whitespace-no-wrap text-right text-sm text-gray-500 leading-5 font-medium">Date
+
+                    </td>
                   </tr>
                   <tr>
                     <td class="px-6 py-4 whitespace-no-wrap">
