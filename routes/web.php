@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DriverController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +26,9 @@ Route::get('/dashboard', function () {
     return view('logistics.dashboard');
 })->name('dashboard');
 
-Route::get('/drivers', function () {
-    return view('logistics.drivers');
-})->name('drivers');
+Route::get('/drivers',[DriverController::class, 'index'])->name('drivers');
+Route::get('/drivers/create',[DriverController::class, 'create'])->name('newDriver');
+Route::post('/drivers',[DriverController::class, 'store'])->name('driver.store');
 
 Route::get('/drivers/newDriver', function () {
     return view('logistics.newDriver');
