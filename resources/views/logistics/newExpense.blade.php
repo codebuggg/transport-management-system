@@ -5,7 +5,8 @@
 <div class="mx-auto w-full lg:w-1/2 mt-6 pl-0 lg:pl-2">
 
     <div class="leading-loose">
-        <form class="p-10 bg-white rounded shadow-xl">
+        <form action="{{ route('expense.store') }}" method="POST" class="p-10 bg-white rounded shadow-xl">
+            @csrf
             <p class="text-lg text-gray-800 font-medium pb-4">New Expense Record </p>
 
             <div class="inline-block mt-2 -mx-1 pl-1 w-full">
@@ -21,11 +22,15 @@
 
             <div class="inline-block mt-2 pr-1 w-1/2">
                 <label class="inline-block text-sm text-gray-600" for="cus_email">Amount </label>
-                <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="cus_email" type="tel" required="" placeholder="Amount" aria-label="Email">
+                <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="amount" type="tel" required="" placeholder="Amount" aria-label="Email">
             </div>
             <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
-                <label class="block text-sm text-gray-600" for="cus_email">Next due date</label>
-                <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="cus_email" type="date" required="" placeholder="Next Sale Date" aria-label="Email">
+                <label class="block text-sm text-gray-600" for="cus_email">Date</label>
+                <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="date" type="date" required="" placeholder="Next Sale Date" aria-label="Email">
+            </div>
+            <div class="mt-2">
+                <label class=" block text-sm text-gray-600" for="cus_email">Description</label>
+                <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="description" type="text" required="" placeholder="Home Address" aria-label="Email">
             </div>
 
             <div class="mt-6">
