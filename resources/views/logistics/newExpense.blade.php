@@ -6,7 +6,7 @@
 
     <div class="leading-loose">
         <form class="p-10 bg-white rounded shadow-xl">
-            <p class="text-lg text-gray-800 font-medium pb-4">New Sales Record </p>
+            <p class="text-lg text-gray-800 font-medium pb-4">New Expense Record </p>
 
         <div class="space-y-1">
             <label id="listbox-label" class="block text-sm leading-5 font-medium text-gray-700">
