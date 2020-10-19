@@ -55,38 +55,11 @@
                     <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
                       GHS 234.00
                     </td>
-                    <td class="px-6 py-4 whitespace-no-wrap text-right text-sm text-gray-500 leading-5 font-medium">Date
+                    <td class="px-6 py-3 whitespace-no-wrap text-right text-sm text-gray-500 leading-5 font-medium">Date
 
                     </td>
                   </tr>
-                  <tr>
-                    <td class="px-6 py-4 whitespace-no-wrap">
-                      <div class="flex items-center">
-                        <div class="">
-                          <div class="text-sm leading-5 font-medium text-gray-900">
-                            Expenditure
-                          </div>
-                          <div class="text-sm leading-5 text-gray-500">
-                            <span>Name of driver</span>
-                           </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-no-wrap">
-                      <div class="text-sm leading-5 text-gray-900">Vehicle Model</div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-no-wrap">
-                      <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                        Paid by company
-                      </span>
-                    </td>
-                    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
-                      GHS 234.00
-                    </td>
-                    <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
-                      <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                    </td>
-                  </tr>
+
 
 
 
