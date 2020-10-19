@@ -6,9 +6,9 @@
           <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
             <div class="flex justify-between m-2 font-lg font-bold py-2">
                <span> All Sales</span>
-               <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
-                <a href="/sales/newSales">Add New Sales</a>
-              </button>
+               <a href="/sales/create" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+                Add New Sales
+              </a>
             </div>
             <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
               <table class="min-w-full divide-y divide-gray-200">
