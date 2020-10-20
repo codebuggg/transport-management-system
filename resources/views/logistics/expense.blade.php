@@ -7,7 +7,7 @@
             <div class="flex justify-between m-2 font-lg font-bold py-2">
                <span> All Expenses</span>
                <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
-                <a href="/expense/newExpense">Add New Expense</a>
+                <a href="/expense/create">Add New Expense</a>
               </button>
             </div>
             <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
