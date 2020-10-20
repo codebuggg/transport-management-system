@@ -16,13 +16,13 @@ use App\Http\Controllers\ExpenseController;
 |
 */
 
-Route::get('/', function(){
-    return view('login');
-})->name('login');;
+// Route::get('/', function(){
+//     return view('login');
+// })->name('login');;
 
-Route::get('/register', function(){
-    return view('register');
-})->name('register');;
+// Route::get('/register', function(){
+//     return view('register');
+// })->name('register');;
 
 Route::get('/dashboard', function () {
     return view('logistics.dashboard');
@@ -61,7 +61,7 @@ Route::get('/messages/newMessages', function () {
     return view('logistics.newMessages');
 })->name('newMesages');
 
-// Auth::routes();
+Auth::routes();
 
 // Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 
