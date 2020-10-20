@@ -39,9 +39,9 @@ Route::get('/sales',[SalesController::class, 'index'])->name('sales');
 Route::get('/sales/create',[SalesController::class, 'create'])->name('newSales');
 Route::post('/sales',[SalesController::class, 'store'])->name('sales.store');
 
-Route::get('/expense',[expenseController::class, 'index'])->name('expense');
-Route::get('/expense/create',[expenseController::class, 'create'])->name('newExpense');
-Route::post('/expense',[expenseController::class, 'store'])->name('expense.store');
+Route::get('/expense',[ExpenseController::class, 'index'])->name('expense');
+Route::get('/expense/create',[ExpenseController::class, 'create'])->name('newExpense');
+Route::post('/expense',[ExpenseController::class, 'store'])->name('expense.store');
 
 
 Route::get('/expense', function () {

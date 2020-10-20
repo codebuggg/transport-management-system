@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class expense extends Model
+class Expense extends Model
 {
     /**
      * The attributes that are mass assignable.

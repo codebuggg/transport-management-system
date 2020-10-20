@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\expense;
+use App\Expense;
 use App\Driver;
 use Illuminate\Http\Request;
 
-class expenseController extends Controller
+class ExpenseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,6 @@ class expenseController extends Controller
      */
     public function create()
     {
-        
         return view('logistics.newExpense',[
             'drivers' => Driver::get()
         ]);
