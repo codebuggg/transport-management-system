@@ -61,7 +61,7 @@ Route::get('/messages/newMessages', function () {
     return view('logistics.newMessages');
 })->name('newMesages');
 
-Auth::routes();
+// Auth::routes();
 
 // Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 
