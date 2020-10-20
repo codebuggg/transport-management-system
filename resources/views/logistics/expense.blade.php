@@ -55,7 +55,7 @@
                     <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
                     {{ $expense->amount }}
                     </td>
-                    <td class="px-6 py-3 whitespace-no-wrap text-right text-sm text-gray-500 leading-5 font-medium">
+                    <td class="px-6 py-3 whitespace-no-wrap text-left text-sm text-gray-500 leading-5 font-medium">
                     {{ $expense->date }}
                     </td>
                   </tr>
