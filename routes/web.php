@@ -39,9 +39,9 @@ Route::get('/sales',[SalesController::class, 'index'])->name('sales');
 Route::get('/sales/create',[SalesController::class, 'create'])->name('newSales');
 Route::post('/sales',[SalesController::class, 'store'])->name('sales.store');
 
-// Route::get('/expense',[expenseController::class, 'index'])->name('expense');
-// Route::get('/expense/create',[expenseController::class, 'create'])->name('newExpense');
-// Route::post('/expense',[expenseController::class, 'store'])->name('expense.store');
+Route::get('/expense',[expenseController::class, 'index'])->name('expense');
+Route::get('/expense/create',[expenseController::class, 'create'])->name('newExpense');
+Route::post('/expense',[expenseController::class, 'store'])->name('expense.store');
 
 
 Route::get('/expense', function () {
@@ -60,10 +60,10 @@ Route::get('/messages/newMessages', function () {
     return view('logistics.newMessages');
 })->name('newMesages');
 
-// Auth::routes();
+Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
-// Auth::routes();
+Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
