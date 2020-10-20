@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SalesController;
 use App\Http\Controllers\DriverController;
+use App\Http\Controllers\ExpenseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,13 +45,13 @@ Route::get('/expense/create',[ExpenseController::class, 'create'])->name('newExp
 Route::post('/expense',[ExpenseController::class, 'store'])->name('expense.store');
 
 
-Route::get('/expense', function () {
-    return view('logistics.expense');
-})->name('expense');
+// Route::get('/expense', function () {
+//     return view('logistics.expense');
+// })->name('expense');
 
-Route::get('/expense/newExpense', function () {
-    return view('logistics.newExpense');
-})->name('newExpense');
+// Route::get('/expense/newExpense', function () {
+//     return view('logistics.newExpense');
+// })->name('newExpense');
 
 Route::get('/messages', function () {
     return view('logistics.messages');

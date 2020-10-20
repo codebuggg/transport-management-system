@@ -16,7 +16,7 @@ class ExpenseController extends Controller
     public function index()
     {
         return view('logistics.expense',[
-            'expense' => expense::with('driver')->get()
+            'expenses' => Expense::with('driver')->get()
         ]);
     }
 
@@ -40,22 +40,23 @@ class ExpenseController extends Controller
      */
     public function store(Request $request)
     {
-        expense::create([
+        Expense::create([
             'driver_id' => $request->input('driver'),
             'amount' => $request->input('amount'),
             'description' => $request->input('description'),
             'date' => $request->input('date'),
         ]);
-        return redirect('/expense/create')->with('status', 'New expense Record Added!');
+        return redirect('/expense/create')->with('status', 'New Expense Record Added!');
+    
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\expense  $expense
+     * @param  \App\Expense  $expense
      * @return \Illuminate\Http\Response
      */
-    public function show(expense $expense)
+    public function show(Expense $expense)
     {
         //
     }
@@ -63,10 +64,10 @@ class ExpenseController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\expense  $expense
+     * @param  \App\Expense  $expense
      * @return \Illuminate\Http\Response
      */
-    public function edit(expense $expense)
+    public function edit(Expense $expense)
     {
         //
     }
@@ -75,10 +76,10 @@ class ExpenseController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\expense  $expense
+     * @param  \App\Expense  $expense
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, expense $expense)
+    public function update(Request $request, Expense $expense)
     {
         //
     }
@@ -86,10 +87,10 @@ class ExpenseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\expense  $expense
+     * @param  \App\Expense  $expense
      * @return \Illuminate\Http\Response
      */
-    public function destroy(expense $expense)
+    public function destroy(Expense $expense)
     {
         //
     }

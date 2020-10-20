@@ -30,22 +30,22 @@
                   </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
-
+                @foreach ($expenses as $expense)
                   <tr>
                     <td class="px-6 py-4 whitespace-no-wrap">
                       <div class="flex items-center">
                         <div class="">
                           <div class="text-sm leading-5 font-medium text-gray-900">
-                            Name of Driver
+                          {{ $expense->driver->fname}} {{ $expense->driver->lname}}
                           </div>
                           <div class="text-sm leading-5 text-gray-500">
-                            <span>License Plate</span>
+                            <span>{{ $expense->driver->licenseNumber}}</span>
                            </div>
                         </div>
                       </div>
                     </td>
                     <td class="px-6 py-4 whitespace-no-wrap">
-                      <div class="text-sm leading-5 text-gray-900">Description of Expenditure</div>
+                      <div class="text-sm leading-5 text-gray-900">{{ $expense->description }}</div>
                     </td>
                     <td class="px-6 py-4 whitespace-no-wrap">
                       <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
@@ -53,16 +53,13 @@
                       </span>
                     </td>
                     <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
-                      GHS 234.00
+                    {{ $expense->amount }}
                     </td>
                     <td class="px-6 py-3 whitespace-no-wrap text-right text-sm text-gray-500 leading-5 font-medium">Date
-
+                    {{ $expense->date }}
                     </td>
                   </tr>
-
-
-
-
+                  @endforeach
                   <!-- More rows... -->
                 </tbody>
               </table>
