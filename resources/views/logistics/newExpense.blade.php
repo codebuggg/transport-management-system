@@ -37,8 +37,9 @@
             <div class="inline-block mt-2 pr-1 w-1/2">
                 <label class="inline-block text-sm text-gray-600" for="cus_email">paid by </label>
                 <select name="status" class="block appearance-none w-full bg-white border border-gray-600 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                    <option value="driver">Paid by Driver</option>
-                    <option value="company">Paid by Company</option>
+                    <option selected disabled>Expense paid by</option>
+                    <option value="driver">Driver</option>
+                    <option value="company">Company</option>
                   </select>
             </div>
             <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
