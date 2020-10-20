@@ -21,12 +21,12 @@
                       Description
                     </th>
                     <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                      Status
+                      Paid by
                     </th>
                     <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                       Amount
                     </th>
-                    <th class="px-6 py-3 bg-gray-50">Date</th>
+                    <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Date</th>
                   </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
@@ -55,7 +55,7 @@
                     <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
                     {{ $expense->amount }}
                     </td>
-                    <td class="px-6 py-3 whitespace-no-wrap text-right text-sm text-gray-500 leading-5 font-medium">Date
+                    <td class="px-6 py-3 whitespace-no-wrap text-right text-sm text-gray-500 leading-5 font-medium">
                     {{ $expense->date }}
                     </td>
                   </tr>
