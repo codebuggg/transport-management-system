@@ -28,7 +28,7 @@ class expenseController extends Controller
     public function create()
     {
         
-        return view('logistics.newexpense',[
+        return view('logistics.newExpense',[
             'drivers' => Driver::get()
         ]);
     }
