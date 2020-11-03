@@ -23,7 +23,9 @@
                     <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                       Sales Amount
                     </th>
-
+                    <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                      Sales Recieved on
+                    </th>
                   </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
@@ -52,11 +54,13 @@
                       <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
                         {{ $sale->amount }}
                       </td>
+                      <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                          <p class="text-gray-900 whitespace-no-wrap">
+                          {{ $sale->created_at->toDayDateTimeString() }}
+                          </p>
+                      </td>
                     </tr>
                     @endforeach
-
-
-
                   <!-- More rows... -->
                 </tbody>
               </table>

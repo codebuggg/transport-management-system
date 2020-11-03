@@ -24,9 +24,7 @@ Route::get('/', function(){
 //     return view('register');
 // })->name('register');;
 
-Route::get('/dashboard', function () {
-    return view('logistics.dashboard');
-})->name('dashboard');
+Route::get('/dashboard', DashboardController::class)->name('dashboard');
 
 Route::get('/drivers',[DriverController::class, 'index'])->name('drivers');
 Route::get('/drivers/create',[DriverController::class, 'create'])->name('newDriver');
