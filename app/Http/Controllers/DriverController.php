@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Driver;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class DriverController extends Controller
 {
@@ -37,7 +39,16 @@ class DriverController extends Controller
      */
     public function store(Request $request)
     {
-        Driver::create([
+        // Set file attributes.
+        $filepath = 'upload/drivers/images';
+        $file = $request->file('profile-picture');
+        $filename = $request->input('license_number'). ' ' . $request->file('profile-picture')->getClientOriginalName(); 
+
+        // Upload to S3, overwriting if filename exists.
+        File::streamUpload($filepath, $filename, $file, true);
+
+        // dd($request->file('profile-picture'));
+        $driver = Driver::create([
             'fname' => $request->input('firstname'),
             'lname' => $request->input('lastname'),
             'phone' => $request->input('phone'),
@@ -52,7 +63,8 @@ class DriverController extends Controller
             'carMake' => $request->input('car_make'),
             'carModel' => $request->input('car_model'),
             'seatingCapacity' => $request->input('seating_capacity'),
-            'licensePlate' => $request->input('license_number'),
+            'licensePlate' => $request->input('license_plate'),
+            'profile_picture_url' => $filepath.'/'.$filename,
             'salesAmount' => $request->input('sales'),
             'status' => $request->input('status'),
         ]);

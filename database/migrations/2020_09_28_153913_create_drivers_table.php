@@ -19,7 +19,7 @@ class CreateDriversTable extends Migration
             $table->string('lname');
             $table->text('phone');
             $table->date('dob');
-            $table->string('licenseNumber', 10)->unique();
+            $table->string('licenseNumber', 20)->unique();
             $table->string('issueState');
             $table->string('homeAddress');
             $table->string('motherName');
@@ -31,6 +31,7 @@ class CreateDriversTable extends Migration
             $table->string('seatingCapacity');
             $table->string('licensePlate');
             $table->string('salesAmount');
+            $table->string('profile_picture_url');
             $table->enum('status', ['daily','weekly','bi-weekly','monthly' ])->default('weekly');
             $table->timestamps();
         });

@@ -24,23 +24,23 @@ Route::get('/', function(){
 //     return view('register');
 // })->name('register');;
 
-Route::get('/dashboard', DashboardController::class)->name('dashboard');
+Route::get('/dashboard', DashboardController::class)->middleware('auth')->name('dashboard');
 
-Route::get('/drivers',[DriverController::class, 'index'])->name('drivers');
-Route::get('/drivers/create',[DriverController::class, 'create'])->name('newDriver');
-Route::post('/drivers',[DriverController::class, 'store'])->name('driver.store');
+Route::get('/drivers',[DriverController::class, 'index'])->middleware('auth')->name('drivers');
+Route::get('/drivers/create',[DriverController::class, 'create'])->middleware('auth')->name('newDriver');
+Route::post('/drivers',[DriverController::class, 'store'])->middleware('auth')->name('driver.store');
 
 Route::get('/drivers/newDriver', function () {
     return view('logistics.newDriver');
-})->name('newDriver');
+})->middleware('auth')->name('newDriver');
 
-Route::get('/sales',[SalesController::class, 'index'])->name('sales');
-Route::get('/sales/create',[SalesController::class, 'create'])->name('newSales');
-Route::post('/sales',[SalesController::class, 'store'])->name('sales.store');
+Route::get('/sales',[SalesController::class, 'index'])->middleware('auth')->name('sales');
+Route::get('/sales/create',[SalesController::class, 'create'])->middleware('auth')->name('newSales');
+Route::post('/sales',[SalesController::class, 'store'])->middleware('auth')->name('sales.store');
 
-Route::get('/expense',[ExpenseController::class, 'index'])->name('expense');
-Route::get('/expense/create',[ExpenseController::class, 'create'])->name('newExpense');
-Route::post('/expense',[ExpenseController::class, 'store'])->name('expense.store');
+Route::get('/expense',[ExpenseController::class, 'index'])->middleware('auth')->name('expense');
+Route::get('/expense/create',[ExpenseController::class, 'create'])->middleware('auth')->name('newExpense');
+Route::post('/expense',[ExpenseController::class, 'store'])->middleware('auth')->name('expense.store');
 
 
 // Route::get('/expense', function () {
@@ -59,7 +59,7 @@ Route::get('/messages/newMessages', function () {
     return view('logistics.newMessages');
 })->name('newMesages');
 
-Auth::routes();
+Auth::routes(['except' => 'login']);
 
 // Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 

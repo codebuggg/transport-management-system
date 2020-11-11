@@ -16,7 +16,7 @@
           </div>
         @endif
 
-        <form action="{{ route('driver.store') }}" class="p-10 bg-white rounded shadow-xl" method="POST">
+        <form action="{{ route('driver.store') }}" enctype="multipart/form-data" class="p-10 bg-white rounded shadow-xl" method="POST">
             @csrf
             <p class="text-lg text-gray-800 font-medium pb-4">Driver information</p>
             <div class="">
@@ -63,12 +63,12 @@
                 <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="father_name" type="text" required="" placeholder="Father's Name" aria-label="Email">
             </div>
             <div class="inline-block mt-2 w-1/2 pr-1">
-                <label class="hidden block text-sm text-gray-600" for="cus_email">homeAddress</label>
+                <label class="hidden block text-sm text-gray-600" for="cus_email">Home Address</label>
                 <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="parent_address" type="text" required="" placeholder="Home Addess" aria-label="Email">
             </div>
             <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
-                <label class="hidden block text-sm text-gray-600" for="cus_email">parent'sPhone</label>
-                <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="emergency_contact" type="text" required="" placeholder="Emergency Contact" aria-label="Email">
+                <label class="hidden block text-sm text-gray-600" for="cus_email">Parent's Phone</label>
+                <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="emergency_contact" type="tel" required="" placeholder="Emergency Contact" aria-label="Email">
             </div>
 
             <p class="text-lg text-gray-800 font-medium py-4">Car Information</p>
@@ -82,17 +82,17 @@
                 <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="car_model" type="text" required="" placeholder="Model" aria-label="Email">
             </div>
             <div class="inline-block mt-2 w-1/2 pr-1">
-                <label class="hidden block text-sm text-gray-600" for="cus_email">SeatingCapacity</label>
-                <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="seating_capacity" type="text" required="" placeholder="Seating Capacity" aria-label="Email">
+                <label class="hidden block text-sm text-gray-600" for="cus_email">Seating Capacity</label>
+                <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="seating_capacity" type="number" required="" placeholder="Seating Capacity" aria-label="Email">
             </div>
             <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
-                <label class="hidden block text-sm text-gray-600" for="cus_email">licensePlate</label>
+                <label class="hidden block text-sm text-gray-600" for="cus_email">license Plate</label>
                 <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="license_plate" type="text" required="" placeholder="License Plate" aria-label="Email">
             </div>
             <p class="text-lg text-gray-800 font-medium py-4">Payment Information</p>
             <div class="inline-block mt-2 w-1/2 pr-1">
                 <label class="hidden block text-sm text-gray-600" for="cus_email">SalesAmount</label>
-                <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="sales" type="text" required="" placeholder="Sales to be made" aria-label="Email">
+                <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="sales" type="number" required="" placeholder="Sales to be made" aria-label="Email">
             </div>
             <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
                 <label class="hidden block text-sm text-gray-600" for="cus_email">Recurring</label>
@@ -105,7 +105,7 @@
             </div>
             <div class="inline-block mt-2 w-1/2 pr-1">
                 <label class="block text-sm text-gray-600" for="cus_email">Profile Picture</label>
-                <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="picture" type="file" required="" placeholder="upload image" aria-label="Email">
+                <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="profile-picture" type="file" required="" placeholder="upload image" aria-label="Email">
             </div>
             <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
                 <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit">Add Driver</button>
