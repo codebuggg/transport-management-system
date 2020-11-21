@@ -45,8 +45,12 @@ class MacroServiceProvider extends ServiceProvider
             $filesystem = new Filesystem($adapter);
 
             return $overWrite 
-                    ? $filesystem->putStream($fileName, $resource) 
-                    : $filesystem->writeStream($fileName, $resource);
+                    ? $filesystem->putStream($fileName, $resource,[
+                        'visibility' => 'public'
+                    ]) 
+                    : $filesystem->writeStream($fileName, $resource, [
+                        'visibility' => 'public'
+                    ]);
         });
     }
 }

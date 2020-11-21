@@ -82,7 +82,7 @@
             <div x-data="{ isOpen: false }" class="ml-3 relative">
                 <div>
                     <button @click="isOpen = !isOpen" class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-white transition duration-150 ease-in-out" id="user-menu" aria-label="User menu" aria-haspopup="true">
-                        <img class="h-8 w-8 rounded-full" src={{asset('asset/images/logowhite.png')}} alt="">
+                        <img class="h-8 w-8 rounded-full" src={{asset('asset/images/logouticon.png')}} alt="">
                     </button>
                     <button x-show="isOpen" @click="isOpen = false" class="h-full w-full fixed inset-0 cursor-default"></button>
                 </div>

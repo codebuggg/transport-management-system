@@ -28,11 +28,14 @@ Route::get('/dashboard', DashboardController::class)->middleware('auth')->name('
 
 Route::get('/drivers',[DriverController::class, 'index'])->middleware('auth')->name('drivers');
 Route::get('/drivers/create',[DriverController::class, 'create'])->middleware('auth')->name('newDriver');
+Route::get('/drivers/edit/{driver}',[DriverController::class, 'edit'])->middleware('auth')->name('editDriver');
 Route::post('/drivers',[DriverController::class, 'store'])->middleware('auth')->name('driver.store');
-
+Route::get('/drivers/view/{driver}',[DriverController::class, 'show'])->middleware('auth')->name('driver.show');
 Route::get('/drivers/newDriver', function () {
     return view('logistics.newDriver');
 })->middleware('auth')->name('newDriver');
+
+
 
 Route::get('/sales',[SalesController::class, 'index'])->middleware('auth')->name('sales');
 Route::get('/sales/create',[SalesController::class, 'create'])->middleware('auth')->name('newSales');

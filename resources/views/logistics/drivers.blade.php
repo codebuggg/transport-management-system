@@ -34,6 +34,7 @@
                 <tbody class="bg-white divide-y divide-gray-200">
                 @foreach ($drivers as $driver)
                   <tr>
+                  
                     <td class="px-6 py-4 whitespace-no-wrap">
                       <div class="flex items-center">
                         <div class="flex-shrink-0 h-10 w-10">
@@ -62,7 +63,8 @@
                     {{ $driver->status }}
                     </td>
                     <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
-                      <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                      <a href="/drivers/view/{{ $driver->id }}" class="text-indigo-600 hover:text-indigo-900 pr-4">View</a>
+                      <a href="/drivers/edit/{{ $driver->id }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                     </td>
                   </tr>
                   @endforeach

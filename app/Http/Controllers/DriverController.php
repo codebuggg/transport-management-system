@@ -42,11 +42,11 @@ class DriverController extends Controller
         // Set file attributes.
         $filepath = 'upload/drivers/images';
         $file = $request->file('profile-picture');
-        $filename = $request->input('license_number'). ' ' . $request->file('profile-picture')->getClientOriginalName(); 
+        $filename = $request->input('license_number'). ' ' . $file->getClientOriginalName(); 
 
         // Upload to S3, overwriting if filename exists.
-        File::streamUpload($filepath, $filename, $file, true);
-
+        // File::streamUpload($filepath, $filename, $file, true);
+        $path = Storage::disk('s3')->put($filepath.'/'.$filename, fopen($file, 'r+'), 'public');
         // dd($request->file('profile-picture'));
         $driver = Driver::create([
             'fname' => $request->input('firstname'),
@@ -80,7 +80,7 @@ class DriverController extends Controller
      */
     public function show(Driver $driver)
     {
-        //
+        return view('logistics.viewDriver', compact('driver'));
     }
 
     /**
@@ -91,7 +91,7 @@ class DriverController extends Controller
      */
     public function edit(Driver $driver)
     {
-        //
+        return view('logistics.editDriver', compact('driver'));
     }
 
     /**
