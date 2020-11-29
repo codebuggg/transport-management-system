@@ -80,7 +80,7 @@ class DriverController extends Controller
      */
     public function show(Driver $driver)
     {
-        return view('logistics.viewDriver', compact('driver'));
+        return view('logistics.viewdriver', compact('driver'));
     }
 
     /**
