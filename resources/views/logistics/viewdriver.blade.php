@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
 <div class="flex flex-col mx-auto mt-8 w-4/6 py-8 bg-white shadow overflow-hidden sm:rounded-lg">
     <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
       <h3 class="text-lg leading-6 font-medium text-gray-900">
@@ -148,5 +147,4 @@
       </dl>
     </div>
   </div>
-
 @endsection
