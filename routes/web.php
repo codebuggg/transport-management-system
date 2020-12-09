@@ -19,6 +19,9 @@ use App\Http\Controllers\ExpenseController;
 Route::get('/', function(){
     return view('login');
 })->name('login');
+Route::get('/login', function(){
+    return view('login');
+});
 
 // Route::get('/register', function(){
 //     return view('register');
