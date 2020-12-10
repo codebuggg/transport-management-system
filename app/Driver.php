@@ -26,6 +26,8 @@ class Driver extends Model
 
     public function showProdilePicture()
     {
-        return Storage::disk('s3')->response($this->profile_picture_url);
+        // return Storage::disk('s3')->response($this->profile_picture_url);
+
+        return Storage::disk('s3')->url($this->profile_picture_url);
     }
 }
