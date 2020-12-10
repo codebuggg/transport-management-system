@@ -46,7 +46,7 @@ class DriverController extends Controller
 
         // Upload to S3, overwriting if filename exists.
         // File::streamUpload($filepath, $filename, $file, true);
-        $path = Storage::disk('s3')->put($filepath.'/'.$filename, fopen($file, 'r+'), 'public');
+        // $path = Storage::disk('s3')->put($filepath.'/'.$filename, fopen($file, 'r+'), 'public');
         // dd($request->file('profile-picture'));
         $driver = Driver::create([
             'fname' => $request->input('firstname'),
